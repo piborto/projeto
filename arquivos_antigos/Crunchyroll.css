@@ -9,9 +9,9 @@ body {
 }
 
 html, body {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: auto;
+    height: auto; /* Mudei de 100% para auto */
+    min-height: 100vh; /* Garante altura mínima */
+    overflow-y: auto; /* Mudei de hidden para auto - PERMITE SCROLL! */
 }
 
 /* =================== MENU =================== */
@@ -75,8 +75,8 @@ html, body {
     background-color: black;
     padding: 20px;
     text-align: left;
-    margin-top: 60px;
-    min-height: calc(100vh - 60px);
+    margin-top: 60px; /* Ajustei para compensar o menu fixo */
+    min-height: calc(100vh - 60px); /* Garante altura mínima */
 }
 
 .indexh1 {
@@ -187,44 +187,22 @@ html, body {
 }
 
 .background-image-wrapper {
-    position: fixed;
-    top: 54px; /* ← MUDEI AQUI: desce o elemento inteiro */
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    background-size: cover;
-    height: 80vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000;
-}
-
-/* Gradiente FIXO na imagem - não faz scroll */
-.background-image-wrapper::after {
-    content: '';
-    position: absolute;
+    position: fixed; /* Mudei de absolute para fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        transparent 30%,  /* Mais imagem visível no topo */
-        rgba(0,0,0,0.2) 50%,
-        rgba(0,0,0,0.5) 70%,
-        rgba(0,0,0,0.8) 85%,
-        black 100%
-    );
-    pointer-events: none; /* Não interfere com clicks */
+    height: 100vh; /* Altura total da viewport */
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .conteudo-detalhes {
     position: relative;
     z-index: 2;
-    padding: 80px 50px 100px 50px;
+    padding: 80px 50px 100px 50px; /* Aumentei o padding bottom */
     min-height: 100vh;
-    /* REMOVIDO: gradiente daqui - agora está fixo na imagem */
 }
 
 .nome {
@@ -232,7 +210,7 @@ html, body {
     font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     font-size: 2.125rem;
     text-align: left;
-    margin-top: 40px;
+    margin-top: 40px; /* Reduzi a margem top */
 }
 
 .linha {
@@ -328,7 +306,7 @@ html, body {
     flex-wrap: wrap;
     gap: 150px;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Adicionei margem bottom */
 }
 
 .texto1, .texto2 {
@@ -409,9 +387,5 @@ html, body {
     .Animes {
         padding: 15px;
         margin-top: 50px;
-    }
-    
-    .background-image-wrapper {
-        height: 70vh; /* Ajuste para mobile */
     }
 }
